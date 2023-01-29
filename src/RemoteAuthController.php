@@ -7,7 +7,7 @@ class RemoteAuthController extends Controller
 {
     public function dashboard()
     {
-        $websites = config('remote-auth-manager');
+        $websites = config('remote-auth.remote-auth-manager');
         return view('remote-auth.dashboard', compact('websites'));
     }
 }
