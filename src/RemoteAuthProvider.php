@@ -2,6 +2,7 @@
 
 namespace Laravins\RemoteAuth;
 
+use App\Helpers\Laravins\RemoteAuth;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\ServiceProvider;
 
@@ -36,6 +37,8 @@ class RemoteAuthProvider extends ServiceProvider
 
         ], ['remote-auth']);
 
+        RemoteAuth::routes();
+        
         Artisan::call('vendor:publish --tag=remote-auth --ansi --force');
     }
 }
