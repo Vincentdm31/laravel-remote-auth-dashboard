@@ -3,7 +3,7 @@
 return [
     [
         'name' => 'Locked',
-        'url' => 'http://locked.test/',
+        'url' => 'https://locked.test/',
         'password' => 'pgmpgm'
     ],
     [
@@ -13,7 +13,7 @@ return [
     ],
     [
         'name' => 'Locked off',
-        'url' => 'http://locked.test/',
+        'url' => 'https://locked.test/',
         'password' => 'pgmpgm'
     ],
 ];
