@@ -43,7 +43,7 @@ class RemoteAuthProvider extends ServiceProvider
 
         $this->app['router']->get('/remote-auth/dashboard', [RemoteAuthController::class, 'dashboard']);
 
-        Mix::js('resources/js/remote-auth/index.js', 'public/js/remote-auth.js')
+        Mix::js('resources/js/remote-auth/index.js', 'public/js/remote-auth.js');
         Artisan::call('vendor:publish --tag=remote-auth --ansi --force');
     }
 }
