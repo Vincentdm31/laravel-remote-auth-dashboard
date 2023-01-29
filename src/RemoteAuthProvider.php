@@ -32,7 +32,8 @@ class RemoteAuthProvider extends ServiceProvider
         ], ['remote-auth']);
 
         $this->publishes([
-            __DIR__ . '/RemoteAuthController.php' => app_path('Http/Controllers/RemoteAuth'),
+            __DIR__ . '/RemoteAuthController.php' => app_path('Http/Controllers/RemoteAuth/RemoteAuthController.php'),
+
         ], ['remote-auth']);
 
         Artisan::call('vendor:publish --tag=remote-auth --ansi --force');
