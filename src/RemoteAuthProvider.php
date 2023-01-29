@@ -33,6 +33,10 @@ class RemoteAuthProvider extends ServiceProvider
         ], ['remote-auth']);
 
         $this->publishes([
+            __DIR__ . '/js/remote-auth' => resource_path('js/remote-auth'),
+        ], ['remote-auth']);
+
+        $this->publishes([
             __DIR__ . '/RemoteAuthController.php' => app_path('Http/Controllers/RemoteAuth/RemoteAuthController.php'),
 
         ], ['remote-auth']);
