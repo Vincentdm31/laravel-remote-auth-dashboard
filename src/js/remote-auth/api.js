@@ -72,7 +72,7 @@ class RemoteAuthAPI {
             body:
                 JSON.stringify({
                     password: document.querySelector('#pwd').value,
-                    auth_pass: "pgmpgm"
+                    auth_pass: endpoint.password
                 })
         }).then(res => res.json().then(data => this.toast.showSuccessToast(data.user.name + ' password updated'))).catch(err => this.toast.showErrorToast('User update error: ' + err))
     }
@@ -84,8 +84,7 @@ class RemoteAuthAPI {
             method: 'post',
             body:
                 JSON.stringify({
-                    password: "azeazeazeaze",
-                    auth_pass: "pgmpgm"
+                    auth_pass: endpoint.password
                 })
         }).then(e => e.json().then(res => {
             this.table.updateTable(res);
@@ -103,7 +102,7 @@ class RemoteAuthAPI {
             method: 'delete',
             body:
                 JSON.stringify({
-                    auth_pass: "pgmpgm"
+                    auth_pass: endpoint.password
                 })
         }).then(e => e.json().then(res => {
             console.log('res', res)
