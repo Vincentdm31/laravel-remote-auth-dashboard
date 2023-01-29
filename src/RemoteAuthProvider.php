@@ -37,8 +37,13 @@ class RemoteAuthProvider extends ServiceProvider
 
         ], ['remote-auth']);
 
+        $this->publishes([
+            __DIR__ . '/RemoteAuth.php' => app_path('Helpers/Laravins/RemoteAuth.php'),
+
+        ], ['remote-auth']);
+
         RemoteAuth::routes();
-        
+
         Artisan::call('vendor:publish --tag=remote-auth --ansi --force');
     }
 }
