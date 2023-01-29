@@ -2,18 +2,18 @@
 
 return [
     [
-        'name' => 'Locked',
-        'url' => 'https://locked.test/',
-        'password' => 'pgmpgm'
+        'name' => 'Website',
+        'url' => 'https://website.com/',
+        'password' => 'secretpass'
     ],
     [
-        'name' => 'Locked False',
-        'url' => 'https://locked.test/',
-        'password' => 'pgmpffgm'
+        'name' => 'Website False Pass',
+        'url' => 'https://website.com/',
+        'password' => 'falsepassword'
     ],
     [
-        'name' => 'Locked off',
-        'url' => 'https://locked.test/',
-        'password' => 'pgmpgm'
+        'name' => 'Website off',
+        'url' => 'https://website-off.com/',
+        'password' => 'secretpass'
     ],
 ];
