@@ -15,6 +15,15 @@ class RemoteAuthProvider extends ServiceProvider
      */
     public function register()
     {
+    }
+
+    /**
+     * Bootstrap services.
+     *
+     * @return void
+     */
+    public function boot()
+    {
         $this->publishes([
             __DIR__ . '/config/remote-auth-manager.php' => config_path('remote-auth/remote-auth-manager.php'),
         ], ['remote-auth']);
@@ -29,17 +38,7 @@ class RemoteAuthProvider extends ServiceProvider
         ], ['remote-auth']);
 
         $this->app['router']->get('/remote-auth/dashboard', [RemoteAuthController::class, 'dashboard']);
-        
-        Artisan::call('vendor:publish --tag=remote-auth --ansi --force');
-    }
 
-    /**
-     * Bootstrap services.
-     *
-     * @return void
-     */
-    public function boot()
-    {
-       
+        Artisan::call('vendor:publish --tag=remote-auth --ansi --force');
     }
 }
