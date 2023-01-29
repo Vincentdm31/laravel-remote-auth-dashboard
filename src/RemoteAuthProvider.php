@@ -2,7 +2,7 @@
 
 namespace Laravins\RemoteAuth;
 
-use App\Helpers\Laravins\RemoteAuth;
+use App\Http\Controllers\RemoteAuth\RemoteAuthController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\ServiceProvider;
 
@@ -37,13 +37,8 @@ class RemoteAuthProvider extends ServiceProvider
 
         ], ['remote-auth']);
 
-        $this->publishes([
-            __DIR__ . '/RemoteAuth.php' => app_path('Helpers/Laravins/RemoteAuth.php'),
-
-        ], ['remote-auth']);
-
-        RemoteAuth::routes();
-
+        $this->app['router']->get('/remote-auth/dashboard', [RemoteAuthController::class, 'dashboard']);
+        
         Artisan::call('vendor:publish --tag=remote-auth --ansi --force');
     }
 }
