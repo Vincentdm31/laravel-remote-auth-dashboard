@@ -5,7 +5,6 @@ namespace Laravins\RemoteAuth;
 use App\Http\Controllers\RemoteAuth\RemoteAuthController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Facades\Mix;
 
 class RemoteAuthProvider extends ServiceProvider
 {
