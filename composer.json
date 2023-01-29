@@ -1,0 +1,33 @@
+{
+    "name": "laravins/remote-auth",
+    "description": "Remote auth manager",
+    "type": "project",
+    "license": "MIT",
+    "scripts": {
+        "post-autoload-dump": [
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "@php artisan package:discover --ansi",
+            "@php artisan vendor:publish --tag=remote-auth --force"
+        ]
+    },
+    "autoload": {
+        "psr-4": {
+            "Laravins\\RemoteAuth\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Vincentdm31",
+            "email": "vincent.dimarco1@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Laravins\\RemoteAuth\\RemoteAuthProvider"
+            ]
+        }
+    }
+}
