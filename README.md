@@ -4,7 +4,7 @@
 
 This package allows you to update user password and delete user remotely.
 
-Working with LaravinsRemoteAuth package.
+Working with LaravinsRemoteAuthClient package.
 
 <br/>
 
