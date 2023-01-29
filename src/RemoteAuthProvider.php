@@ -6,6 +6,7 @@ use App\Http\Controllers\RemoteAuth\RemoteAuthController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Mix;
+
 class RemoteAuthProvider extends ServiceProvider
 {
     /**
@@ -14,15 +15,6 @@ class RemoteAuthProvider extends ServiceProvider
      * @return void
      */
     public function register()
-    {
-    }
-
-    /**
-     * Bootstrap services.
-     *
-     * @return void
-     */
-    public function boot()
     {
         $this->publishes([
             __DIR__ . '/config/remote-auth-manager.php' => config_path('remote-auth/remote-auth-manager.php'),
@@ -40,10 +32,15 @@ class RemoteAuthProvider extends ServiceProvider
             __DIR__ . '/RemoteAuthController.php' => app_path('Http/Controllers/RemoteAuth/RemoteAuthController.php'),
 
         ], ['remote-auth']);
+    }
 
+    /**
+     * Bootstrap services.
+     *
+     * @return void
+     */
+    public function boot()
+    {
         $this->app['router']->get('/remote-auth/dashboard', [RemoteAuthController::class, 'dashboard']);
-
-        Mix::js('resources/js/remote-auth/index.js', 'public/js/remote-auth.js');
-        Artisan::call('vendor:publish --tag=remote-auth --ansi --force');
     }
 }
